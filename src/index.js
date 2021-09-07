@@ -24,6 +24,8 @@ $(document).ready(function() {
     function getElements(response) {
       $('.showHumidity').text(`The humidity in ${city} is ${response.main.humidity}%`);
       $('.showTemp').text(`The temperature in Kelvins is ${response.main.temp} degrees.`);
+      $('.showFahrenheit').text(`The temperature in Fahrenheit is ${((response.main.temp - 273.15) * 9/5 + 32).toFixed(1)} degrees.`);
+      $('.showDescription').text(`Description: ${response.weather[0].description}`);
     }
   });
 });
